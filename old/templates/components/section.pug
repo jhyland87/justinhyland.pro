@@ -1,0 +1,56 @@
+//- Section elements
+mixin section-title(title, summary)
+	| <!-- Begin Section Title: #{title} -->
+	div.col-md-12
+		div.section-title.item_bottom.text-center
+			h1.uppercase title
+			b.v-line-md
+			h4.weight-300 summary
+	| <!-- End Section Title: #{title} -->
+
+
+mixin section
+	section.cf.mb4.mb3-ns.mb3-p
+		
+
+mixin row(columns)
+	div.row.clearfix
+		if columns
+			h1 Columns: #{columns.length}
+		if block
+			block
+		else
+			p No content provided
+
+
+mixin row-section(title, content, align)
+	| <!-- Begin #{title} section -->
+	div.service-item-2.item_top(style="opacity: 1; top: 0px;")
+		if align
+			div(class='content-' + align)
+		else
+			div.content-left
+			h5.uppercase title
+			p content
+	| <!-- End #{title} section -->
+
+
+mixin section2(title, summary, size)
+	| <!-- Begin #{title} section -->
+	section.section-content.new-line.killPadBottom(id=title)
+		div.container
+			div.row
+				div(class= size ? 'col-md-' + size : 'no-size')
+					| <!-- Begin Section Title -->
+					div.section-title.item_bottom.text-center
+						h1.uppercase title
+						b.v-line-md
+						h4.weight-300 summary
+					| <!-- End Section Title -->
+			div.row.clearfix
+				div(class='col-md-' + size + ' col-sm-' + size + ' col-xs-' + size )
+					div.service-item-2.item_top(style="opacity: 1; top: 0px;")
+						div
+							h5.uppercase 'Full Width'
+							p 'This should be full width'
+	| <!-- End #{title} section -->

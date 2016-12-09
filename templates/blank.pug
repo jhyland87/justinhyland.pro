@@ -1,0 +1,27 @@
+include components/misc
+
+title
+	+prefixed_title('Home Page')
+
+title
+	+prefixed_title('Experiences', 'Something Else')
+
+title
+	+prefixed_title('Experiences', ['Linux','Javascript'])
+
+h1
+	!=html_title
+
+strong
+	!=headerTxt
+div.main-content
+	h3 Main Content
+	span.content-body
+		!=contents
+	span.footer
+		!=footer_str
+
+div.footer
+	!=footer
+
++btn('tester..')

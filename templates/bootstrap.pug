@@ -1,0 +1,534 @@
+extends base-layout
+
+include components/bootstrap
+
+//- include components/misc
+
+
+block content
+  +begin_block( 'hello-world.pug > content' )
+
+  +rowc()
+    .col-md-12
+      .section-title.item_bottom.text-center(style="opacity: 1; bottom: 0px;")
+        h1.uppercase Bootstrap Mixins
+        h4.weight-300 Examples of how the Pug/Jade Bootstrap mixins work
+        div#menu-items.text-left
+          i.text-mute Loading...
+
+  
+  //- Alerts
+  +rowc()#alerts.anchor.demo-content(data-title="Alerts")
+    .col-md-12
+      section
+        h3 Alerts
+        p Different types of alerts... n stuff
+        +help('Blah blah')
+        hr
+
+        h4 Simple Alerts
+        p These contain no icons, and are not dismissable
+        +alert-info("Simple <em>Info</em> alert")
+        +alert-danger("Simple <em>Danger</em> alert")
+        +alert-success("Simple <em>Success</em> alert")
+        +alert-warning("Simple <em>Warning</em> alert") 
+
+        h4 Alerts w/ Icons
+        p These contain icons, but are not dismissable
+        +alert-i-info("<em>Info</em> alert with an icon","info-sign")
+        +alert-i-danger("<em>Danger</em> alert with an icon","exclamation-sign")
+        +alert-i-success("<em>Success</em> alert with an icon","thumbs-up")
+        +alert-i-warning("<em>Warning</em> alert with an icon","alert") 
+
+        h4 Dismissible Alerts
+        p These contain no icons, but are dismissable
+        +alert-x-info("Dismissible <em>Info</em> alert")
+        +alert-x-danger("Dismissible <em>Danger</em> alert")
+        +alert-x-success("Dismissible <em>Success</em> alert")
+        +alert-x-warning("Dismissible <em>Warning</em> alert") 
+
+        h4 Dismissible Alerts w/ Icons
+        p These contain icons, and are also dismissable
+        +alert-ix-info("Dismissible <em>Info</em> alert with an icon","info-sign")
+        +alert-ix-danger("Dismissible <em>Danger</em> alert with an icon","exclamation-sign")
+        +alert-ix-success("Dismissible <em>Success</em> alert with an icon","thumbs-up")
+        +alert-ix-warning("Dismissible <em>Warning</em> alert with an icon","alert") 
+
+  //- Panels
+  +rowc()#panels.anchor.demo-content(data-title="Panels")
+    .col-md-12
+      section
+        h3 Panels
+        hr
+        +panel-default("<em>Default</em> Panel")
+          p This is the <strong>Default</strong> panel!
+
+        +panel-primary("<em>Primary</em> Panel")
+          p This is the <strong>Primary</strong> panel!
+
+        +panel-success("<em>Success</em> Panel")
+          p This is the <strong>Success</strong> panel!
+          
+        +panel-info("<em>Info</em> Panel")
+          p This is the <strong>Info</strong> panel!
+          
+        +panel-warning("<em>Warning</em> Panel")
+          p This is the <strong>Warning</strong> panel!
+          
+        +panel-danger("<em>Danger</em> Panel")
+          p This is the <strong>Danger</strong> panel!
+       
+  //- Modal
+  +rowc()#modal.anchor.demo-content(data-title="Modal")
+    .col-md-12
+      section
+        h3 Modal
+        hr   
+        button.btn.btn-primary(data-toggle="modal",data-target="#myModal") Launch demo modal
+        +modal("Modal title","myModal")
+          p This is modal content
+
+  //- Buttons
+  +rowc()#buttons.anchor.demo-content(data-title="Buttons")
+    .col-md-12
+      section
+        h3 Buttons
+        hr
+          
+        h4 Link Buttons
+        +a-btn("#") Default Link Button
+        +a-btn-primary("#") Primary Link Button
+        +a-btn-info("#") Info Link Button
+        +a-btn-warning("#") Warning Link Button
+        +a-btn-danger("#") Danger Link Button
+        +a-btn-success("#") Success Link Button
+
+        h4 Basic Buttons
+        +btn("Default Button")
+        +btn-primary("Primary Button")
+        +btn-info("Info Button")
+        +btn-warning(" Warning Button")
+        +btn-danger("Danger Button")
+        +btn-success("Success Button")
+
+        h4 Large Buttons
+        +btn-lg("Default Large Button")
+        +btn-lg-primary("Primary Large Button")
+        +btn-lg-info("Info Large Button")
+        +btn-lg-warning("Warning Large Button")
+        +btn-lg-danger("Danger Large Button")
+        +btn-lg-success("Success Large Button")
+
+        h4 Small Buttons
+        +btn-sm("Default Small Button")
+        +btn-sm-info("Info Small Button")
+        +btn-sm-info("Info Small Button")
+        +btn-sm-warning("Warning Small Button")
+        +btn-sm-danger("Danger Small Button")
+        +btn-sm-success("Success Small Button")
+
+        h4 Extra Small Buttons
+        +btn-xs("Default Extra Small Button")
+        +btn-xs-primary("Primary Extra Small Button")
+        +btn-xs-info("Info Extra Small Button")
+        +btn-xs-warning("Warning Extra Small Button")
+        +btn-xs-danger("Danger Extra Small Button")
+        +btn-xs-success("Success Extra Small Button")
+
+        h4 Input Buttons
+        +input-btn("Default Input Button")
+        +input-btn-primary("Primary Input Button")
+        +input-btn-info("Info Input Button")
+        +input-btn-warning("Warning Input Button")
+        +input-btn-danger("Danger Input Button")
+        +input-btn-success("Success Input Button")
+
+        h4 Submit Buttons
+        +submit("Default Submit Button")
+        +submit-primary("Primary Submit Button")
+        +submit-info("Info Submit Button")
+        +submit-warning("Warning Submit Button")
+        +submit-danger("Danger Submit Button")
+        +submit-success("Success Submit Button")
+
+  //- List Groups
+  +rowc()#list-groups.anchor.demo-content(data-title="List Groups")
+    .col-md-12
+      section
+        h3 List Groups
+        hr
+          
+        h4 Simple list groups
+        +list-group(["Cras justo odio","Cras justo odio","Cras justo odio","Cras justo odio","Cras justo odio"])
+
+        h4 List group with links
+        +list-group-links([{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},],0)
+
+
+        h4 Custom list group
+        +list-group-custom()
+          +list-group-item("#","true")
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+          +list-group-item("#")
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+          +list-group-item("#")
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+  //- Navs
+  +rowc()#navs.anchor.demo-content(data-title="Navs")
+    .col-md-12
+      section
+        h3 Nav Groups
+        hr
+          
+        h4 Nav-Tabs
+        +nav-tabs([{text:"Home",href:"#"},{text:"Profile",href:"#"},{text:"Message",href:"#"}],0)
+
+        h4 Nav-Tabs Justified
+        +nav-tabs-justified([{text:"Home",href:"#"},{text:"Profile",href:"#"},{text:"Message",href:"#"}],0)
+
+        h4 Nav-Pills
+        +nav-pills([{text:"Home",href:"#"},{text:"Profile",href:"#"},{text:"Message",href:"#"}],0)
+
+        h4 Nav-Pills Justified
+        +nav-pills-justified([{text:"Home",href:"#"},{text:"Profile",href:"#"},{text:"Message",href:"#"}],0)
+
+        h4 Nav-Stacked
+        +nav-stacked([{text:"Home",href:"#"},{text:"Profile",href:"#"},{text:"Message",href:"#"}],0)
+
+  //- Navbars
+  +rowc()#navbars.anchor.demo-content(data-title="Navbars")
+    .col-md-12
+      section
+        h3 Navbars
+        hr
+        +navbar("Project name","dropdown_menu")
+        hr
+        +navbar("Project name","dropdown_menu","inverse")
+        hr
+        +navbar("Project name","dropdown_menu")
+          +nav_item("index.html","active") Home
+          +nav_item("index.html") About
+          +nav_item("index.html") Contact
+        hr
+        +navbar("Project name","dropdown_menu")
+          +nav_item("index.html","active") Home
+          +nav_item("about.html") About
+          +nav_item("contact.html") Contact
+          +nav_item_dropdown("#")(label="Dropdown")
+            +nav_item("#") Action
+            +nav_item("#") Another Action
+            +nav_item("#") Something else here
+            +nav_divider
+            +nav_header Nav header
+            +nav_item("#") Separated link
+            +nav_item("#") One more separated link
+
+  //- Tabs
+  +rowc()#tabs.anchor.demo-content(data-title="Tabs")
+    .col-md-12
+      section
+        h3 Tabs
+        hr
+          
+        h4 Sublist..
+        +tab-list(["Home","Profile","Messages","Settings"],0)
+          +tab("Home","active")
+            h1 Home
+            p This is Home tab
+          +tab("Profile")
+            h1 Profile
+            p This is Profile tab
+          +tab("Messages")
+            h1 Messages
+            p This is Messages tab
+          +tab("Settings")
+            h1 Settings
+            p This is Settings tab
+
+  //- Dropdowns
+  +rowc()#dropdowns.anchor.demo-content(data-title="Dropdowns")
+    .col-md-12
+      section
+        h3 Dropdowns
+        hr
+          
+        h4 Sublist..
+
+  //- Badges
+  +rowc()#badges.anchor.demo-content(data-title="Badges")
+    .col-md-12
+      section
+        h3 Badges
+        hr
+          
+        h4 Sublist..
+
+  //- Badges
+  +rowc()#labels.anchor.demo-content(data-title="Labels")
+    .col-md-12
+      section
+        h3 Labels
+        hr
+        +label-default('Default Label')
+        +label-info('Info Label')
+        +label-primary('Primary Label')
+        +label-success('Success Label')
+        +label-warning('Warning Label')
+        +label-danger('Danger Label')
+
+  //- Tooltips
+  +rowc()#tooltips.anchor.demo-content(data-title="Tooltips")
+    .col-md-12
+      section
+        h3 Tooltips
+        hr
+          
+        h4 Sublist..
+
+  //- Tables
+  +rowc()#tables.anchor.demo-content(data-title="Tables")
+    .col-md-12
+      section
+        h3 Tables
+        hr
+          
+        h4 Sublist..
+
+  //- Glyphicons
+  +rowc()#glyphicons.anchor.demo-content(data-title="Glyphicons")
+    .col-md-12
+      section
+        h3 Glyphicons
+        hr
+          
+        h4 Sublist..
+
+  //- Breadcrumbs
+  +rowc()#breadcrumbs.anchor.demo-content(data-title="Breadcrumbs")
+    .col-md-12
+      section
+        h3 Breadcrumbs
+        hr
+          
+        h4 Sublist..
+
+  //-p This is the hello world example...
+  //- No attributes or params, just a class
+  +rowc()
+    +section-title('Section One','Example without attributes or params')
+    - for (var i=1; i<6; i++) // tests h1 through h5
+      +head(i).ub-heading.uppercase Testing Head #{i}
+
+  +rowc().quux
+    +section-title('Section Two','Example with only a class attribute')
+
+  //- Attributes, but no params
+  +rowc()(data-foo="bar", class="baz").quux
+    +section-title('Section Three','Example with multiple attributes (in parenthesis)')
+
+  //- Attributes AND params
+  +rowc('test')(data-foo="bar", class="baz").quux
+    +section-title('Section Four','Example with multiple attributes and a parameter')
+
+
+  +row()(class="clearfix test1")
+    +section-title('Section Two','WITH a vertical line', true)
+
+
+
+
+  +rowc()
+    .col-md-12
+      .section-title.item_bottom.text-center(style="opacity: 1; bottom: 0px;")
+        h1.uppercase Alerts
+        +panel-primary("Alerts... n stuff")
+          p 
+            +alert-info("This is an info alert")
+            +alert-info("<strong>Well done!</strong> You successfully read this important alert message.")
+            +alert-danger("This is a danger alert")
+            +alert-success("This is a success alert")
+            +alert-warning("This is a warning alert") 
+
+
+  +rowc()
+    .col-md-12
+      .section-title.item_bottom.text-center(style="opacity: 1; bottom: 0px;")
+        h1.uppercase Panels
+        +panel-primary("Primary Panel")
+          p This is primary panel 
+
+  +row()(class="clearfix test2")
+    +section-title('Hello WOrld','Idk... just testing')
+    .col-md-6.col-sm-6.col-xs-12
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 1/5 Width, Float Left, Icon
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+          +text('span','danger')
+            i Testing!...
+    .col-md-6.col-sm-6.col-xs-12
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-file-pdf-o
+        .content-right
+          h5.uppercase 1/5 Width, Float Right, Icon
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  +row()(class="clearfix test2")
+    .col-md-6.col-sm-6.col-xs-12
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/5 Width, Float Right
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-md-6.col-sm-6.col-xs-12
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/5 Width, Float Left
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  +row()(class="clearfix test2")
+    .col-xs-12.col-md-8
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 2/3rds Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-file-pdf-o
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  //- 2:1 ratio, left aligned, with icon
+  +row()(class="clearfix test2")
+    .col-xs-12.col-md-8
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-desktop
+        .content-right
+          h5.uppercase 2/3rds Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-file-pdf-o
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  //- 2:1 ratio, left aligned, with icon
+  +row()(class="clearfix test2")
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-file-pdf-o
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-12.col-md-8
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-desktop
+        .content-right
+          h5.uppercase 2/3rds Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+    //- 2:1 ratio, left aligned, with icon
+  +row()(class="clearfix test2")
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-12.col-md-8
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 2/3rds Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  //- 3 columns, no icons, left aligned
+  +row()(class="clearfix test2")
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  //- 3 columns, icons, left aligned
+  +row()(class="clearfix test2")
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-left
+          i.fa.fa-desktop
+        .content-right
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  //- 3 columns
+  +row()(class="clearfix test2")
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+    .col-xs-6.col-md-4
+      .service-item-2.item_top(style="opacity: 1; top: 0px;")
+        .icon-right
+          i.fa.fa-desktop
+        .content-left
+          h5.uppercase 1/3rd Width
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas turpis. Praesent faucibus nisl sit amet nulla sollicitudin.
+
+  +end_block( 'hello-world.pug > content' )
+
+//- 
+  block footer_content
+    div.col-md-12.item_fade_in
+      strong Thanks for visiting...

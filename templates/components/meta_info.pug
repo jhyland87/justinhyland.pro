@@ -1,0 +1,39 @@
+- function limit_str(phrase, limit, units){ 
+- 	if ( ! phrase || typeof phrase !== 'string' || ! limit || typeof limit !== 'number' ){
+- 		return phrase
+-		}
+- 	if( typeof units !== 'string' || [ 'chars','words' ].indexOf( units ) === -1 ){
+- 		units = 'chars'
+-		}
+- 	if( units === 'words' ){
+- 		phrase = phrase.split( " " )
+- 		phrase = phrase.slice( 0, limit )
+- 		return phrase.join(' ')
+- 	} 
+- 	return phrase.substr( 0, limit-1 )
+- }
+
+
+- function create_meta(attrs){
+- 	attrs.typeof_content = typeof attrs.content
+- 	if( typeof attrs.content !== 'undefined' ){
+- 		attrs.content_before = attrs.content
+- 	}
+- 	//attrs.typeof_name = typeof name
+- 	//attrs.typeof_config = typeof technical.meta[attrs.name]
+- 	if ( typeof attrs.content === 'string' && typeof attrs.name === 'string' && typeof technical.meta[attrs.name] !== 'undefined' ){
+- 		attrs.set_limit = technical.meta[attrs.name].length
+- 		attrs.content = limit_str( attrs.content, technical.meta[attrs.name].length, technical.meta[attrs.name].units )
+- 	}
+- 	//- see: https://developers.facebook.com/docs/sharing/webmasters#markup
+- 	//- og:title og:type og:image og:url og:description
+- 	if( typeof attrs.content !== 'undefined' ){
+- 		attrs.content_after = attrs.content
+- 	}
+- 	return attrs
+- }
+
+// Begin: meta-info
+for m in meta_data
+	meta()&attributes(create_meta(m))
+// End: meta-info

@@ -1,0 +1,35 @@
+status: employed
+# OLD person.yaml STUFF
+name: Thomas A. Anderson
+# Info to show in header
+email: neo@zion.gov
+phone: (312) 555-0690
+location: Zion, Earth
+# Header introduction / mission statement
+intro: I carry the Matrix's source code, known as the Prime Program. This gives me the ability to freely manipulate the simulated reality of the Matrix, similar to the authority a system administrator has over a given system. I manifest these abilities as various superhuman powers.
+#for Twitter cards:
+twitter: '@neo'
+# Removing all proficiencies will remove the section from the resume
+proficiencies:
+  # - list item
+  - Hacking
+  - Creative entrepeneurship
+  - Martial arts
+  - Negotiations
+  - Hovercraft piloting
+# Links to include in header
+links:
+  # text: http://link.com
+  '@neo': https://github.com/neo
+name2:
+  first: Justin
+  last: Hyland
+contact:
+  phone: [ '602', '740', '0620' ]
+  email: j@linux.com
+  linkedin: www.linkedin.com/in/justin-hyland
+location2: 
+  city: Phoenix
+  state: AZ
+  zip: 85021
+  country: US

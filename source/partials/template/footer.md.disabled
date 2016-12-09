@@ -1,0 +1,5 @@
+---
+layout: template/footer.pug
+partial: true
+---
+BLAH BLAH

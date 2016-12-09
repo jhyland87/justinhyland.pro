@@ -1,0 +1,48 @@
+// Begin: head
+
+
+script(src="/assets/js/bundle.js")
+title= site.title
+
+//- Create theme color classes:
+-
+  function getTextColor () {
+    console.log('site:',site)
+    var darkgray = '#333333'
+    var white = '#ffffff'
+
+    if (contrast.ratio(site.theme, white) >= 3.5) {
+      return white
+    } else {
+      return darkgray
+    }
+  }
+
+  function getAccentColor () {
+    var darkgray = '#333333'
+    var white = '#ffffff'
+
+    if (contrast.ratio(site.theme, white) >= 3.5) {
+      return site.theme
+    } else {
+      return darkgray
+    }
+  }
+
+style.
+  .bg-accent { background-color: #{site.theme}; }
+  .bg-accent-text { color: #{getTextColor()}; }
+  .accent { color: #{getAccentColor()}; }
+  .b--accent { border-color: #{site.theme}; }
+  ::selection {
+    background-color: #{site.theme};
+    color: #{getTextColor()};
+  }
+
+if process.env.NODE_ENV == 'print'
+  style.
+    html { font-size: 75%; }
+
+link(rel="stylesheet", type="text/css", href="/css/main.css")
+  
+// End: head

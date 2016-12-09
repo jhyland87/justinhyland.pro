@@ -1,0 +1,17 @@
+//- Sections
+
+mixin section(data)
+  - if( typeof data === 'object')
+
+// Begin: meta-info 
+
+-
+  function structure_section(title, body){ 
+    
+  }
+
+
+for m in meta_data
+  meta()&attributes(create_meta(m))
+
+// End: meta-info 

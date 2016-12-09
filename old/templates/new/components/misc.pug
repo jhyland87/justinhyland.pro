@@ -1,0 +1,202 @@
+//-
+  Hotizontal Line Drawer Thingy
+  
+  @param   {string}   caption   Caption to display
+  @param   {number}   size      Width of horiontal line
+
+  @example
+    // Basic Example
+    + divider('Main Header')
+      // <div class="row new-line-clearfix">
+          <div class="col-lg-8 col-lg-offset-2 text-center item_bottom" style="opacity: 1; bottom: 0px">
+            <h4 class="uppercase"> </h4>Main Header
+            <div class="separator-lg double"></div>
+          </div>
+        </div>
+mixin divider(caption, size)
+  //- Size needs to be: sm, md or lg (CSS Classes .separator-sm,.separator-md,.separator-lg)
+  div.row.new-line-clearfix
+    - if ( ! size || typeof size !== "string" || ["sm","md","lg"].indexOf(size) === -1 ){
+    -   size = "lg"
+    - }
+    //- div.col-md-8.col-md-offset-2.text-center.item_bottom(style="opacity: 1; bottom: 0px;")
+    //- div(style="opacity: 1; bottom: 0px;" class="col-${size}-8 col-#{size}-offset-2 text-center item_bottom")
+    div.col-lg-8.col-lg-offset-2.text-center.item_bottom(style="opacity: 1; bottom: 0px;")
+      - if( typeof caption !== "undefined" && caption.length > 0)
+        h4.uppercase 
+        =caption
+      div.separator-lg.double
+      //- div(class="separator-#{size}")
+        // Horizontal Divider
+
+//-
+  Bootstrap Button Generator
+
+  @param   {string}         caption           Caption to show on the button
+  @param   {object}         cfg               Object of the button settings
+  @param   {string}         cfg.id            ID to use for the button
+  @param   {string,array}   cfg.class         One or multiple classes (can be an array, or space delimited values)
+  @param   {object}         cfg.events        Object of javascript events (key is event name, value is action)
+  @param   {boolean}        cfg.fill          If true, the btn-fill will be added, otherwise, the btn-dark is added
+  @param   {string,number}  cfg.size          Size of the button, can be: xs, sm, md, lg; or: 0, 1, 2, 3
+  @param   {string}         cfg.type          Button type - Any of: default, primary, success, info, warning, danger, link 
+  @param   {boolean}        cfg.disabled      If true, the button gets disabled
+  @param   {string,object}  cfg.icon          Single icon on left (string), or an object with right and/or left icon
+  @param   {string}         cfg.icon.left     Icon to show on left side of button
+  @param   {string}         cfg.icon.right    Icon to show on right side of button
+
+  @example
+    // Basic Button
+    +btn("Click Me") 
+      // <button class="btn btn-dark btn-default" type="button">Click Me</button>
+
+    // Moderately customized example (specifying the type and size, and adding a class)
+    +btn("Lg Danger Btn w/ custom class", { type: "danger", size: "lg", class: "my-class" })
+      //  <button class="btn btn-dark btn-danger my-class btn-lg" type="button">Lg Danger Btn w/ custom class</button>
+
+    // Highly customized example (specified type and size, 2 added classes, an HTML5 data tag, and an onClick event)
+    +btn('Sm Info Btn (w/ onclick, custom class and html5 data)', { 
+      type: 'info', 
+      size: 'sm', 
+      class: [ 'Hello','World' ], 
+      data: {
+        content: "Example HTML5 data tag"
+      }, 
+      events: { 
+        click: "javascript:alert('I was clicked');"
+      } 
+    })
+      // <button class="btn btn-dark btn-info Hello World btn-sm" type="button" onClick="javascript:alert('I was clicked');" data-content="Example HTML5 data tag">Sm Info Btn (w/ onclick, custom class and html5 data)</button>
+
+    // Basic with icon (defaults to left side)
+    +btn('Icon Test #1 (default to left)', { icon: 'angle-double-left' })
+       // <button class="btn btn-dark" type="button"><i class="icon-left fa fa-angle-double-left"></i>Icon Test #1 (default to left)</button>
+
+    // Basic with icon on left side
+    +btn('Icon Test #2 (left)', { icon: { left: 'angle-double-left' } })
+      // <button class="btn btn-dark" type="button"><i class="icon-left fa fa-angle-double-left"></i>Icon Test #2 (left)</button>
+
+    // Basic with icon on right side
+    +btn('Icon Test #3 (right)', { icon: { right: 'angle-double-right' } })
+      // <button class="btn btn-dark" type="button">Icon Test #3 (right)<i class="icon-right fa fa-angle-double-right"></i></button>
+
+    // Basic with icons on both sides
+    +btn('Icon Test #4 (left & right)', { icon: { left: 'angle-double-left', right: 'angle-double-right' } })
+      // <button class="btn btn-dark" type="button"><i class="icon-left fa fa-angle-double-left"></i>Icon Test #4 (left &amp; right)<i class="icon-right fa fa-angle-double-right"></i></button>
+mixin btn(caption, cfg) 
+  //- Convert an illegal value to an empty object (to prevent errors)
+  - if ( typeof cfg !== 'object' ) cfg = {}
+
+  //- Create the attrs object with the default classes and type value
+  - var attrs = { type: 'button', class: [ 'btn' ] }
+
+  //- Set button fill type (Theres only btn-fill and btn-dark)
+  - attrs.class.push( 'btn-' + ( cfg.fill ? 'fill' : 'dark' ))
+
+  //- If any events are specified, then add each one (being sure to not prepend 'on' to the event more than once)
+  - if ( typeof cfg.events === 'object'  ){
+  -   for ( var event in cfg.events ) {
+  -      if ( cfg.events.hasOwnProperty( event ) ) {
+          //- Change events like ONCLICK to just click
+  -       var parsedEvent = event.toLowerCase().replace( /^on/i, '' )
+          //- Convert it from click to onClick
+  -       var eventName = 'on' + parsedEvent.charAt(0).toUpperCase() + parsedEvent.slice(1).toLowerCase()
+          //- Add the event (Note: no javascript: is it, as they may not always be needed)
+  -       attrs[ eventName ] = cfg.events[ event ]
+  -     }
+  -    }
+  - }
+
+  //- If block is set to true, add btn-block
+  - if ( typeof cfg.block === 'boolean' && cfg.block === true ){
+  -   attrs.class.push( 'btn-block' )
+  - }
+
+  //- Disable the button if requested
+  - if ( typeof cfg.disabled === 'boolean' && cfg.disabled === true ){
+  -   attrs.class.push( 'disabled' )
+  - }
+
+  //- Verify the button type, and set it if it passes validation
+  - if ( typeof cfg.type === 'string' ){
+  -   var type = cfg.type.toLowerCase().replace( /^btn-/, '' )
+  -   if ( technical.template.buttons.types.indexOf( type ) !== -1 ){
+  -     attrs.class.push( 'btn-' + type )
+  -   } else {
+  -     attrs.class.push( 'invalid-type-' + type )
+  -   }
+  - }
+  
+  //- Add any additional classes that may be provided
+  - if ( typeof cfg.class === 'string' ){
+  -   var classes = cfg.class.split(' ')
+  - } else if ( Array.isArray( cfg.class ) ) {
+  -    var classes = cfg.class
+  - }
+  - if ( typeof classes !== 'undefined' ){
+  //- strip off any period that may be prepended to the classes
+  -   attrs.class = classes.map( c => c.replace( /^\./, '' ) )
+  - }
+
+  //- Add an ID if one is provided
+  - if ( typeof cfg.size === 'string' && technical.template.buttons.sizes.indexOf( cfg.size ) !== -1 ){
+  -   attrs.class.push( 'btn-' + cfg.size )
+  - }
+
+  //- Add an ID if one is provided
+  - if ( typeof cfg.id === 'string' ) {
+  //- strip off any hash/pound sign that may be prepended to the ID
+  -   attrs.id = cfg.id.replace( /^#/, '' )
+  - }
+
+  //- Add any HTML5 data-* tags
+  - if ( typeof cfg.data === 'object' ){
+  -   for ( var key in cfg.data ) {
+  -      if ( cfg.data.hasOwnProperty( key ) ) {
+  -       attrs[ 'data-' + key ] = cfg.data[ key ]
+  -     }
+  -    }
+  - } 
+
+  //- Check for any icons
+  - var icon = {}, c
+  //- If cfg.icon is a string, default to the side defined at technical.template.buttons.icon.default_location
+  - if ( typeof cfg.icon === 'string' ){
+  -   c = cfg.icon.replace( /^\./, '' )
+  -   if ( c.match(/^[a-z]+(\-[a-z]+)+$/ ) ){
+  -     icon[ technical.defaults.button_icon_location ] = c
+  //-     icon.left = c
+  -   }
+  - } else if ( typeof cfg.icon === 'object' ){
+  //- Left Icon
+  -   if ( typeof cfg.icon.left === 'string' ){
+  -     c = cfg.icon.left.replace( /^\./, '' )
+  -     if ( c.match(/^[a-z]+(\-[a-z]+)+$/ ) ){
+  -       icon.left = c
+  -     }
+  -   }
+  //- Right Icon
+  -   if ( typeof cfg.icon.right === 'string' ){
+  -     c = cfg.icon.right.replace( /^\./, '' )
+  -     if ( c.match(/^[a-z]+(\-[a-z]+)+$/ ) ){
+  -       icon.right = c
+  -     }
+  -   }
+  - }
+
+  //- Unique the class names and join them by a space to be properly implemented
+  - attrs.class = [ ...new Set( attrs.class ) ].join(' ')
+  
+  //- Build the button!
+  button()&attributes(attrs)
+    //- Prepend the left icon, if one is defined
+    - if ( typeof icon === 'object' && typeof icon.left === 'string' ){
+        i( class='icon-left fa fa-' + icon.left )
+    - }
+    
+    = caption
+
+    //- Prepend the right icon, if one is defined
+    - if ( typeof icon === 'object' && typeof icon.right === 'string' ){
+        i( class='icon-right fa fa-' + icon.right )
+    - }

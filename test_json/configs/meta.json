@@ -1,0 +1,28 @@
+[
+  {
+    "content": "UTF-8"
+  },
+  {
+    "content": "width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+  },
+  {
+    "name": "description",
+    "content": "Online Resume of Justin Hyland"
+  },
+  {
+    "name": "author",
+    "content": "Justin Hyland"
+  },
+  {
+    "name": "keywords",
+    "content": "linux unix automation infrastructure infosec engineer node nodejs javascript mysql nosql aws jenkins vmware esx esxi mongodb hapijs mongoose php codeigniter python perl apache tomcat nagios nginx"
+  },
+  {
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "name": "theme-color",
+    "content": "#0074D9"
+  }
+]
