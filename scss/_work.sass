@@ -1,0 +1,470 @@
+#portfolio,.work-content
+    overflow: visible
+
+.icon-link
+  font-size: 20px
+  color:#fff
+  text-decoration: none
+  margin-top:10px
+
+.featured-works 
+    background-color: #f6f6f6
+    min-width: 100%
+    margin: 0
+    padding: 0
+    overflow: visible;    
+
+
+.featured-works .tile 
+    background-color: #f6f6f6
+    display: block
+    position: relative
+
+
+.featured-works .tile .title 
+    width:100%
+    display: inline-block
+    text-align: center
+    left: 50%
+    position: absolute
+    top: 50%
+    -webkit-transform: translateX(-50%) translateY(-50%)
+    -ms-transform: translateX(-50%) translateY(-50%)
+    -o-transform: translateX(-50%) translateY(-50%)
+    -moz-transform: translateX(-50%) translateY(-50%)
+    transform: translateX(-50%) translateY(-50%)
+
+.featured-works .tile .big-title 
+    width:100%
+    padding:15px 0px
+    display: inline-block
+    text-align: center
+    left: 50%
+    position: absolute
+    bottom: 0
+    margin-bottom: -1px
+    -webkit-transform: translateX(-50%) translateY(0%)
+    -ms-transform: translateX(-50%) translateY(0%)
+    -o-transform: translateX(-50%) translateY(0%)
+    -moz-transform: translateX(-50%) translateY(0%)
+    transform: translateX(-50%) translateY(0%)
+
+.featured-works .title h3,.featured-works .big-title h3 
+    font-size: 22px
+    line-height: 1.3
+    margin-bottom: 0px
+    padding:0px 10px
+    letter-spacing: 0.03em
+
+
+.featured-works .title h5,.featured-works .big-title h5 
+    font-family: 'Lora', Georgia, serif
+    font-size: 14px
+    line-height: 1
+    margin-bottom: 0px
+
+
+.work-item
+    -webkit-transition: all 0.5s ease-in-out
+    -moz-transition: all 0.5s ease-in-out
+    -ms-transition: all 0.5s ease-in-out
+    -o-transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;        
+
+
+.work-item:hover
+    -webkit-box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.4)
+    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.4)
+    -webkit-transform: scale(1.03) translateZ(0px)
+    -ms-transform: scale(1.03) translateZ(0px)
+    -o-transform: scale(1.03) translateZ(0px)
+    -moz-transform: scale(1.03) translateZ(0px)
+    transform: scale(1.03) translateZ(0px)
+    z-index: 5
+
+
+.height-1 
+    height: 0
+    padding-bottom: 50%
+
+
+.height-2 
+    height: 0
+    padding-bottom: 50%
+
+.arrow-top:after { 
+    bottom: 100%; 
+    left: 50%; 
+    border: solid transparent; 
+    content: " "; 
+    height: 0; 
+    width: 0; 
+    position: absolute; 
+    pointer-events: none; 
+    border-color: rgba(255, 255, 255, 0); 
+    border-bottom-color: #fff; 
+    border-width: 15px; 
+    margin-left: -15px; 
+
+
+.arrow-left:after 
+    right: 100%; 
+    top: 50%; 
+    border: solid transparent; 
+    content: " "; 
+    height: 0; 
+    width: 0; 
+    position: absolute; 
+    pointer-events: none; 
+    border-color: rgba(136, 183, 213, 0); 
+    border-right-color: #f6f6f6; 
+    border-width: 15px; 
+    margin-top: -15px; 
+
+
+.arrow-right:after 
+    border-bottom: 15px solid transparent
+    border-left: 15px solid #f6f6f6
+    border-top: 15px solid transparent
+    content: ""
+    display: block
+    height: 0
+    margin-top: -15px
+    position: absolute
+    right: -15px
+    top: 50%
+    width: 0
+    z-index: 99
+
+.masonry-wrapper
+    width:95%
+    margin:0px auto
+    text-align:center
+    overflow: hidden
+
+.masonry-wrapper .work-item 
+    margin:0px; 
+    line-height: 0
+    width: 33.32%
+    padding: 0
+    position: relative
+
+.work-item .portfolio-image 
+    overflow: hidden
+    display: block
+
+
+.work-item .portfolio-image img 
+    width: 100%
+    height: auto
+    margin: 0px
+    transition: all 0.5s ease-in-out 0s
+    -moz-transition: all 0.5s ease-in-out 0s
+    -webkit-transition: all 0.5s ease-in-out 0s
+    -ms-transition: all 0.5s ease-in-out 0s
+    -o-transition: all 0.5s ease-in-out 0s
+
+.work-item:hover
+    -webkit-box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.0)
+    box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.0)
+
+.work-item:hover .project-overlay 
+    opacity: 1
+    transition: all 0.5s ease-in-out 0s
+    -moz-transition: all 0.5s ease-in-out 0s
+    -webkit-transition: all 0.5s ease-in-out 0s
+    -ms-transition: all 0.5s ease-in-out 0s
+    -o-transition: all 0.5s ease-in-out 0s
+
+
+.work-item:hover .portfolio-image img 
+    -webkit-transform: scale(1.01,1.01)
+    -moz-transform: scale(1.01,1.01)
+    -o-transform: scale(1.01,1.01)
+    -ms-transform: scale(1.01,1.01)
+    transform: scale(1.01,1.01)
+
+
+.project-overlay 
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    margin:0px
+    transition: all 0.4s ease-in-out 0s
+    -moz-transition: all 0.4s ease-in-out 0s
+    -webkit-transition: all 0.4s ease-in-out 0s
+    -o-transition: all 0.4s ease-in-out 0s
+    cursor: crosshair
+    background: rgba(255,255,255,0.9)
+
+.filter
+    margin:0px 0px 60px 0px
+    padding:0
+    list-style:none
+
+.filter li
+    padding:0 20px 10px 0
+    margin:0
+    display:inline-block
+
+.text-center .filter li
+    padding:0 10px 10px
+
+.filter li a
+    display:block
+    position:relative
+    font-family:Lato
+    font-size:12px
+    text-transform:uppercase
+    letter-spacing:.2em
+    color:#1e1e1e
+    line-height:20px
+    padding-left:.1em
+
+.filter li a:after
+    content:""
+    position:absolute
+    bottom:0
+    left:50%
+    margin-left:0
+    width:0
+    height:1px
+    background:#1e1e1e
+    transition:all 200ms ease
+    -webkit-transition:all 200ms ease
+    -moz-transition:all 200ms ease
+    -o-transition:all 200ms ease
+    -ms-transition:all 200ms ease
+
+.filter li a.active:after,
+.filter li a:hover:after
+    width:100%
+    margin-left:-50%
+
+.project-info 
+    position: absolute
+    height: 100px
+    width: 100%
+    text-align: center
+    top:50%
+    -webkit-transform: translateY(-50%)
+    -moz-transform: translateY(-50%)
+    -o-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    transform: translateY(-50%)
+
+
+.project-overlay h4 
+    color: #1e1e1e
+    text-transform: uppercase
+    font-size: 18px;          
+    font-weight: 700
+    letter-spacing: 0.05em
+    padding: 5px
+    margin-top: 40px
+    display: inline-block
+    opacity: 0
+    transition: all 0.2s ease 0s
+    -moz-transition: all 0.2s ease 0s
+    -webkit-transition: all 0.2s ease 0s
+    -ms-transition: all 0.2s ease 0s
+    -o-transition: all 0.2s ease 0s
+
+
+.work-item:hover .project-overlay h4 
+    opacity: 1
+    margin-top: 0px
+    -webkit-transition: all .6s .3s
+    -moz-transition:  all .6s .3s
+    -ms-transition:  all .6s .3s
+    -o-transition:  all .6s .3s
+    transition:  all .6s .3s
+
+
+.work-item h6 
+    margin-top: -40px
+    font-size: 12px
+    font-family: "Lora"
+    font-style: italic
+    color: #000000
+    opacity: 0
+    transition: all 0.6s ease 0.1s
+    -moz-transition: all 0.6s ease 0.1s
+    -webkit-transition: all 0.6s ease 0.1s
+    -ms-transition: all 0.6s ease 0.1s
+    -o-transition: all 0.6s ease 0.1s
+
+
+.work-item:hover h6 
+    opacity: 1
+    margin-top: 0px
+    -webkit-transition: opacity .3s .2s, margin-top .3s .2s
+    -moz-transition: opacity .3s .2s, margin-top .3s .2s
+    -ms-transition: opacity .3s .2s, margin-top .3s .2s
+    -o-transition: opacity .3s .2s, margin-top .3s .2s
+    transition: opacity .3s .2s, margin-top .3s .2s
+
+
+.bg-blue
+    background-color: #3B5998 !important
+
+.bg-blue.arrow-top:after { 
+    border-bottom-color: #3B5998; 
+
+.bg-blue.arrow-left:after { 
+    border-right-color: #3B5998; 
+
+.bg-blue.arrow-right:after { 
+    border-left-color: #3B5998; 
+
+.bg-gray
+    background-color: #B0865E !important
+
+.bg-gray.arrow-top:after { 
+    border-bottom-color:#B0865E; 
+
+.bg-gray.arrow-left:after { 
+    border-right-color: #B0865E; 
+
+.bg-gray.arrow-right:after { 
+    border-left-color: #B0865E; 
+
+.bg-dark
+    background-color: #1e1e1e !important
+
+.bg-dark.arrow-top:after { 
+    border-bottom-color: #1e1e1e; 
+
+.bg-dark.arrow-left:after { 
+    border-right-color: #1e1e1e; 
+
+.bg-dark.arrow-right:after { 
+    border-left-color: #1e1e1e; 
+
+.project-desc .list-details 
+    margin: 0px 0px 20px 0px
+    padding: 0
+    list-style: none
+
+
+.project-desc .list-details li 
+    padding: 3px 0
+
+
+.project-desc .list-details li i 
+    margin-right: 10px
+
+
+.share-list 
+    padding-top: 10px
+
+
+.share-btn 
+    color: #fff
+    cursor: pointer
+    display: inline-block
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: 3px
+    line-height: 1em
+    opacity: 1
+    padding: 16px 20px
+    text-align: center
+    text-transform: uppercase
+    -webkit-transition: opacity 0.25s ease-in-out 0s
+    -moz-transition: opacity 0.25s ease-in-out 0s
+    -ms-transition: opacity 0.25s ease-in-out 0s
+    -o-transition: opacity 0.25s ease-in-out 0s
+    transition: opacity 0.25s ease-in-out 0s;    
+    vertical-align: middle
+
+
+.share-btn:active, .share-btn:focus, .share-btn:hover 
+    color: #fff
+    opacity: 0.9
+
+
+.pagination 
+    position: relative
+    width: 100%
+    z-index: 100
+    margin: 40px 0px 0px 0px
+
+
+.pagination .prev-post, .pagination .next-post 
+    display: block
+    float: left
+    height: 120px
+    overflow: hidden
+    position: relative
+    width: 50%
+
+
+.pagination .next-post:first-child 
+    left: 50%
+
+
+.pagination .prev-post a 
+    background: none repeat scroll 0 0 #F4F4F4
+    display: block
+    height: 100%
+    text-align: right
+    width: 100%
+
+
+.pagination .next-post a 
+    background: none repeat scroll 0 0 #EEEEEE
+    display: block
+    height: 100%
+    width: 100%
+
+
+.pagination-inner 
+    backface-visibility: hidden
+    position: absolute
+    top: 50%
+    transform: translateY(-49%)
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.15s
+    -moz-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.15s
+    -ms-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.15s
+    -o-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.15s
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.15s;    
+    width: 100%
+
+
+.pagination .prev-post .pagination-inner 
+    right: 5%
+
+
+.pagination .next-post .pagination-inner 
+    left: 5%
+
+
+.pagination .prev-post:hover .pagination-inner 
+    right: 6%
+
+
+.pagination .next-post:hover .pagination-inner 
+    left: 6%
+
+
+.pagination div a 
+    color: #000
+    display: block
+    font-size: 15px
+    font-weight: bolder
+    line-height: 1.3em
+    text-transform: uppercase
+
+
+.pagination div a small 
+    color: #000
+    display: block
+    font-family: 'Lora', Georgia, serif
+    font-style: italic
+    font-weight: normal
+    margin-bottom: 5px
+    text-transform: lowercase !important

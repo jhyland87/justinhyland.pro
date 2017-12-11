@@ -1,0 +1,7 @@
+Libraries/Frameworks
+- CodeIgniter
+- HapiJS
+- jQuery
+- BookshekfJS
+- MongooseJS
+- 

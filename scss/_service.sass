@@ -1,0 +1,160 @@
+ul.services 
+    padding: 0px
+    margin: 0px auto
+    text-align: center
+
+
+ul.services li 
+    float: left
+    list-style: none outside none
+    margin: 0px
+    text-align: center
+    -webkit-transition: all 0.6s ease 0s
+    -moz-transition: all 0.6s ease 0s
+    -ms-transition: all 0.6s ease 0s
+    -o-transition: all 0.6s ease 0s
+    transition: all 0.6s ease 0s
+    width: 33.3333%
+
+
+ul.services .service-item 
+    overflow: hidden
+    position: relative
+    padding: 75px 20px
+    min-height: 300px
+    background-color: #3A3A3A
+    display: inline-block
+    border:4px double transparent
+    margin:-1px 0px 0px -1px; 
+
+
+ul.services li:nth-child(2n+1) 
+    background-color: #333333
+
+
+ul.services .service-item:hover 
+    background-color: #1CB5EC
+    color: #fff
+    border:4px dashed rgba(255,255,255,0.9)
+
+
+.service-item i 
+    font-size: 50px
+    color: #1CB5EC
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.25)
+
+
+.service-item h3 
+    font-size: 18px
+    line-height: 24px
+    text-transform: uppercase
+    font-weight: 900
+    margin: 20px 0
+    letter-spacing: 2px
+    color:#fff
+
+
+.service-item span.desc 
+    opacity: 0
+    display: block
+    position: absolute
+    top: 45%
+    left: 0
+    width: 100%
+    padding: 0 50px
+    -webkit-transform: perspective(500px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform: perspective(500px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform: perspective(500px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)
+    -ms-transform: perspective(500px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)
+    transform: perspective(500px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)
+    -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000)
+    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000)
+    -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000)
+    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000)
+    transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000)
+
+
+.service-item .main 
+    -webkit-transition: all 300ms cubic-bezier(.07, .58, .39, 1)
+    -moz-transition: all 300ms cubic-bezier(.07, .58, .39, 1)
+    -o-transition: all 300ms cubic-bezier(.07, .58, .39, 1)
+    -ms-transition: all 300ms cubic-bezier(.07, .58, .39, 1)
+    transition: all 300ms cubic-bezier(.07, .58, .39, 1)
+
+
+.service-item .main i, .service-item .main h3 
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+
+
+.service-item span.desc .btn 
+    margin-top: 20px
+
+
+.service-item:hover .desc 
+    opacity: 1
+    color: #fff
+    -webkit-transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -ms-transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+
+
+.service-item:hover .main h3,.service-item:hover i 
+    letter-spacing: 1px
+    font-weight: 400
+    color: #fff
+
+
+.service-item:hover .main 
+    margin-top: -65px
+
+
+.service-item-2
+    overflow: hidden
+    margin-bottom: 15px
+
+.service-item-2 h5
+    font-weight:900
+    letter-spacing: 0.05em
+    margin-bottom:20px
+
+.service-item-2 .icon-left
+    width:15%
+    float:left
+    text-align: center
+    font-size:32px
+    color:rgba(0,0,0,0.7);    
+
+.service-item-2 .content-right
+    width:84%
+    float:right
+    font-size: 14px
+
+.service-item-2 .icon-right
+    width:15%
+    float:right
+    text-align: center
+    font-size:32px
+    color:rgba(0,0,0,0.7);    
+
+.service-item-2 .content-left
+    width:84%
+    float:left
+    text-align: right
+    font-size: 14px
+
+ul.interest
+    margin:30px 0px 0px 0px
+    padding:0px
+    display: inline-block
+
+ul.interest li
+    list-style-type: none
+    display: inline
+    margin:15px 25px
+
+ul.interest li i
+   font-size: 32px
+   line-height: 1

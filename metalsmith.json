@@ -1,0 +1,36 @@
+{
+  "source": "./src",
+  "destination": "./build",
+  "metadata": {
+    "title": "My Static Site & Blog",
+    "description": "It's about saying »Hello« to the World.",
+    "generator": "Metalsmith",
+    "url": "http://www.metalsmith.io/"
+},
+  "plugins": {
+    "metalsmith-drafts": {},
+    "metalsmith-markdown": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars",
+      "directory": "./layouts"
+    },
+    "metalsmith-models": {
+      "directory": "./models"
+    },
+    "metalsmith-html-tidy": {
+      "indent-spaces": 4,
+      "clean": true,
+      "output-html": true,
+      "hide-comments": true,
+      "show-errors": 6,
+      "show-info": true,
+      "show-warnings": true,
+      "uppercase-attributes": false,
+      "uppercase-tags": false
+    },
+    "metalsmith-handlebars-within": {}
+  }
+}

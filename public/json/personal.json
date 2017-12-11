@@ -1,0 +1,16 @@
+{
+	"name":{
+  		"first": "Justin",
+  		"last": "Hyland"
+	},
+	"contact": {
+		"email": "J@Linux.com",
+		"phone": "6027400620"
+	},
+	"location": {
+		"city": "Phoenix",
+		"state": "AZ",
+		"zip": 85021,
+		"country": "US"
+	}
+}

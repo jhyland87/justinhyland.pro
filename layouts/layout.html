@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+</head>
+<body>
+  <!-- BEGIN: Header -->
+  <header>
+    <p>
+      <a href="/">Home</a>
+    </p>
+  </header>
+  <!-- END: Header -->
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+
+  {{{ contents }}}
+
+  <hr/>
+  <div id="people">
+    <h3>People:</h3>
+    <ul>
+      {{#each model.people}}
+        <li>{{firstName}} {{lastName}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <hr/>
+  <footer>
+    <p>Generated with {{ generator }} &mdash; <a href="{{ url }}">{{ url }}</a></p>
+    <p>Name: <strong>{{model.general.name.first}} {{model.general.name.last}}</strong></p>
+    <p>E-Mail: <strong>{{model.general.contact.email}}</strong></p>
+    <p>Phone: <strong>{{model.general.contact.phone}}</strong></p>    
+  </footer>
+
+</body>
+</html>

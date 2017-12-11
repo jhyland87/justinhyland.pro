@@ -1,0 +1,15 @@
+{
+    "linux": {
+        "aliases": [ "unix" ],
+        "tags": [ "engineering", "infrastructure", "devops" ]
+
+    },
+    "development": {
+        "aliases": [],
+        "tags": []
+    },
+    "infosec": {
+        "aliases": [ "security", "informationsecurity" ],
+        "tags": []
+    }
+}
